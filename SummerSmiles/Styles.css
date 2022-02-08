@@ -1,0 +1,163 @@
+﻿body {
+    background-color: #FFF4D1;
+    font-family: sans-serif;
+}
+
+.footer {
+    background-color: #353A40;
+    text-align: center;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer a:link {
+    color: #F1824C;
+}
+
+.footer a:visited {
+    color: #F1824C;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.footer a:active {
+    color: #FDF554;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.jumbotron {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+.homeSection1 {
+    background-color: #FFF4D1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.homeSection2 {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.homeSection3 {
+    background-color: #FFF4D1;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.homeSection4 {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.register {
+    background-color: #FFF4D1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.formHeadings {
+    width: 25%;
+    text-align: right;
+    float: left;
+    padding-right: 5px;
+}
+
+.formFields {
+    width: 65%;
+    text-align: left;
+    float: left;
+    padding-left: 5px;
+}
+
+.clearFix::after {
+    content: "";
+    clear: both;
+    display: table;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .formHeadings {
+        width: 100%;
+        text-align:left;
+    }
+
+    .formFields {
+        width: 100%
+    }
+}
+
+.Response {
+    background-color: #FFF4D1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Activities {
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.FAQs {
+    background-color: #FFF4D1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contactUs {
+    background-color: #FFF4D1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}

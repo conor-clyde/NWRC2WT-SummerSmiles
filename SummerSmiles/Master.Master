@@ -1,0 +1,219 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="SummerSmiles.Master" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Summer Smiles - International Summer Camp UK</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Conor Clyde">
+    <meta name="description" content="Summer Smiles is an international summer camp based in the United Kingdom (UK), preparing for summer 2021.">
+    <meta name="keywords" content="Summer, Smiles, Camp, International, United Kingdom, UK, children, holiday">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/popper.min.js"></script>
+    <link href="Styles.css" rel="stylesheet" />
+    <style>
+        h1 {
+            color: #353A40;
+        }
+
+        h2, h3, h4 {
+            color: #1456a2;
+        }
+
+        hr.solid {
+            border-top: 1px solid #F1824C;
+            width: 25%;
+            height: 1px;
+        }
+    </style>
+    <script type="text/javascript">
+        function validate() {
+            if (document.myForm.ParentForename.value == "") {
+                alert("Please provide your forename.");
+                document.myForm.ParentForename.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.ParentForename.style.border = "";
+            }
+
+            if (document.myForm.ParentSurname.value == "") {
+                alert("Please provide your surname.");
+                document.myForm.ParentSurname.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.ParentSurname.style.border = "";
+            }
+
+            if (document.myForm.PhoneNo.value == "" || isNaN(document.myForm.PhoneNo.value) || document.myForm.PhoneNo.value.length != 11) {
+                alert("Please provide a phone number in the format ###########.");
+                document.myForm.PhoneNo.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.PhoneNo.style.border = "";
+            }
+
+            var emailID = document.myForm.Email.value;
+            atpos = emailID.indexOf("@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                alert("Please provide a valid email ID.")
+                document.myForm.Email.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.Email.style.border = "";
+            }
+
+            var flag = 0;
+            var contactCounter = document.myForm.contactMethod.length;
+            for (i = 0; i < contactCounter; i++) {
+                if (document.myForm.contactMethod.item(i).checked == true) {
+                    flag = 1
+                }
+            }
+
+            if (flag == 0) {
+                alert("Please select at least one preferred contact method");
+                return false;
+            }
+
+            if (document.myForm.Password.value == "") {
+                alert("Please provide your Password.");
+                document.myForm.Password.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.Password.style.border = "";
+            }
+
+            if (document.myForm.ConfirmPassword.value == "") {
+                alert("Please confirm your Password!");
+                document.myForm.ConfirmPassword.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.ConfirmPassword.style.border = "";
+            }
+
+            if (document.myForm.Password.value != document.myForm.ConfirmPassword.value) {
+                alert("Passwords do not match!");
+                document.myForm.Password.style.border = "2px solid red";
+                document.myForm.ConfirmPassword.style.border = "2px solid red";
+                document.myForm.Password.value = "";
+                document.myForm.ConfirmPassword.value = "";
+                return false;
+            }
+            else {
+                document.myForm.Password.style.border = "";
+                document.myForm.ConfirmPassword.style.border = "";
+            }
+
+            if (document.myForm.confirm.checked == false) {
+                alert("Please tick to confirm that you are the parent/guardian of the child who is being signed up for summer 2021 at Summer Smiles");
+                return false;
+            }
+
+            if (document.myForm.CamperForename.value == "") {
+                alert("Please provide the child's forename.");
+                document.myForm.CamperForename.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.CamperForename.style.border = "";
+            }
+
+            if (document.myForm.CamperSurname.value == "") {
+                alert("Please provide the child's surname.");
+                document.myForm.CamperSurname.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.CamperSurname.style.border = "";
+            }
+
+            var flag = 0;
+            var genderNumber = document.myForm.gender.length;
+            for (i = 0; i < genderNumber; i++) {
+                if (document.myForm.gender.item(i).checked == true) {
+                    flag = 1
+                }
+            }
+
+            if (flag == 0) {
+                alert("Please provide the child's gender");
+                return false;
+            }
+
+            if (document.myForm.Age.value == "") {
+                alert("Please provide the child's age.");
+                document.myForm.Age.style.border = "2px solid red";
+                return false;
+            }
+            else {
+                document.myForm.Age.style.border = "";
+            }
+
+            if (document.myForm.Country.value == "-1") {
+                alert("Please provide the child's home country!");
+                return false;
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/fee43bb7d6.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form action="Response.aspx" name="myForm" onsubmit="return(validate());">
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <img src="Images/Logo.jpg" alt="Logo" style="width: 140px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Default.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Register.aspx">Register for Summer 2021</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Activities.aspx">Activities</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="FAQs.aspx">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.aspx">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div class="footer">
+            <ul style="padding-left: 0px; margin-left: 0px; list-style-type: none; text-align: center;">
+                <li style="display: inline; padding-left: 10px;"><a href="https://en-gb.facebook.com/"><i class="fab fa-facebook-square" style="font-size: 40px;"></i></a></li>
+                <li style="display: inline; padding-left: 10px;"><a href="https://twitter.com/"><i class="fab fa-twitter-square" style="font-size: 40px;"></i></a></li>
+                <li style="display: inline; padding-left: 10px;"><a href="https://www.instagram.com/"><i class="fab fa-instagram-square" style="font-size: 40px;"></i></a></li>
+                <li style="display: inline; padding-left: 10px;"><a href="https://www.youtube.com/"><i class="fab fa-youtube-square" style="font-size: 40px;"></i></a></li>
+            </ul>
+            <p>© 2020 Summer Smiles. All Rights Reserved</p>
+        </div>
+    </form>
+</body>
+</html>
