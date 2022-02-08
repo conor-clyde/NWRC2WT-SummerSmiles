@@ -34,8 +34,6 @@ HTML, CSS and JavaScript languages used<br/>
 ## Activites Page
 ![image](https://user-images.githubusercontent.com/91070226/152924686-6aea2bfe-51e0-4f12-8049-5570c2e09ecb.png)
 
-![image](https://user-images.githubusercontent.com/91070226/152924699-3ef6126b-7d4b-42cf-aa57-13aab10a29da.png)
-
 ## FAQs Page
 
 ![image](https://user-images.githubusercontent.com/91070226/152924725-a5450a64-d517-4000-9d9c-0ccea603c5b3.png)
